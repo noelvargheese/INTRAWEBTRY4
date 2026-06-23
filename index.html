@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Government Information Portal</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="config.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+<header class="topbar">
+    <div class="logo-area">
+        <img src="assets/logo.png" alt="Logo">
+        <div>
+            <h1>Government Information Portal</h1>
+            <p>Announcements • Circulars • Events</p>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+
+    <aside class="sidebar" id="leftLinks">
+        <h2>Quick Links</h2>
+        <div class="links-container"></div>
+    </aside>
+
+    <main class="main-content">
+
+        <section class="hero">
+            <h2>Latest Information</h2>
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search announcements, circulars or events..."
+            >
+        </section>
+
+        <section>
+            <h2>Announcements</h2>
+            <div id="announcements" class="card-grid"></div>
+        </section>
+
+        <section>
+            <h2>Circulars</h2>
+            <div id="circulars" class="card-grid"></div>
+        </section>
+
+        <section>
+            <h2>Events</h2>
+            <div id="events" class="card-grid"></div>
+        </section>
+
+    </main>
+
+    <aside class="sidebar" id="rightLinks">
+        <h2>Resources</h2>
+        <div class="links-container"></div>
+    </aside>
+
+</div>
+
+<footer>
+    <p>Government Information Portal</p>
+</footer>
+
+</body>
+</html>

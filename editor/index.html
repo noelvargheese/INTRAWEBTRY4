@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Government Portal Editor</title>
+
+<link rel="stylesheet" href="editor.css">
+
+<script src="../config.js"></script>
+<script src="editor.js" defer></script>
+
+</head>
+<body>
+
+<header class="header">
+    <h1>Government Portal Editor</h1>
+</header>
+
+<div class="container">
+
+    <!-- Announcements -->
+
+    <section class="panel">
+
+        <h2>Add Announcement</h2>
+
+        <input id="announcementTitle" placeholder="Title">
+
+        <textarea
+            id="announcementContent"
+            placeholder="Content"></textarea>
+
+        <input
+            id="announcementWriter"
+            placeholder="Writer">
+
+        <input
+            id="announcementImage"
+            placeholder="Image URL">
+
+        <input
+            id="announcementPDF"
+            placeholder="PDF URL">
+
+        <input
+            id="announcementLink"
+            placeholder="External Link">
+
+        <button onclick="addAnnouncement()">
+            Add Announcement
+        </button>
+
+    </section>
+
+    <!-- Circular -->
+
+    <section class="panel">
+
+        <h2>Add Circular</h2>
+
+        <input id="circularTitle" placeholder="Title">
+
+        <textarea
+            id="circularContent"
+            placeholder="Content"></textarea>
+
+        <input
+            id="circularWriter"
+            placeholder="Writer">
+
+        <input
+            id="circularImage"
+            placeholder="Image URL">
+
+        <input
+            id="circularPDF"
+            placeholder="PDF URL">
+
+        <input
+            id="circularLink"
+            placeholder="External Link">
+
+        <button onclick="addCircular()">
+            Add Circular
+        </button>
+
+    </section>
+
+    <!-- Events -->
+
+    <section class="panel">
+
+        <h2>Add Event</h2>
+
+        <input id="eventTitle" placeholder="Title">
+
+        <textarea
+            id="eventContent"
+            placeholder="Content"></textarea>
+
+        <input
+            id="eventWriter"
+            placeholder="Writer">
+
+        <input
+            id="eventImage"
+            placeholder="Image URL">
+
+        <input
+            id="eventPDF"
+            placeholder="PDF URL">
+
+        <input
+            id="eventLink"
+            placeholder="External Link">
+
+        <input
+            type="date"
+            id="eventDate">
+
+        <button onclick="addEvent()">
+            Add Event
+        </button>
+
+    </section>
+
+    <!-- Left Links -->
+
+    <section class="panel">
+
+        <h2>Add Left Link</h2>
+
+        <input
+            id="leftName"
+            placeholder="Name">
+
+        <input
+            id="leftURL"
+            placeholder="URL">
+
+        <input
+            id="leftImage"
+            placeholder="Image URL">
+
+        <button onclick="addLeftLink()">
+            Add Left Link
+        </button>
+
+    </section>
+
+    <!-- Right Links -->
+
+    <section class="panel">
+
+        <h2>Add Right Link</h2>
+
+        <input
+            id="rightName"
+            placeholder="Name">
+
+        <input
+            id="rightURL"
+            placeholder="URL">
+
+        <input
+            id="rightImage"
+            placeholder="Image URL">
+
+        <button onclick="addRightLink()">
+            Add Right Link
+        </button>
+
+    </section>
+
+</div>
+
+<hr>
+
+<div class="records">
+
+    <h2>Current Records</h2>
+
+    <div id="recordsContainer">
+
+        Loading...
+
+    </div>
+
+</div>
+
+</body>
+</html>
