@@ -323,3 +323,13 @@ font-size:1.4rem;
 }
 
 }
+.sidebar.active{
+    display:block;
+}
+@media(max-width:768px){
+
+.sidebar.active{
+    display:block;
+}
+
+}
