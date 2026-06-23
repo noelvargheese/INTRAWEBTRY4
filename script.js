@@ -73,7 +73,7 @@ function renderAll() {
 }
 
 function renderLinks(data, container) {
-
+    if(!container) return;
     container.innerHTML = "";
 
     data.forEach(link => {
@@ -97,11 +97,12 @@ function renderLinks(data, container) {
         container.appendChild(a);
     });
 }
-
 function renderCards(data, container, type) {
-
+    if(!container) return;
     const search =
-        searchInput.value.toLowerCase();
+    searchInput
+        ? searchInput.value.toLowerCase()
+        : "";
 
     const filtered =
         data.filter(item => {
@@ -118,6 +119,7 @@ function renderCards(data, container, type) {
                 title.includes(search) ||
                 content.includes(search)
             );
+
         });
 
     container.innerHTML = "";
@@ -132,12 +134,12 @@ function renderCards(data, container, type) {
 
         let dateText = "";
 
-        if (type === "event") {
+        if(type === "event"){
 
             dateText =
                 item.EventDate || "";
 
-        } else {
+        }else{
 
             dateText =
                 item.Date || "";
@@ -145,126 +147,70 @@ function renderCards(data, container, type) {
 
         card.innerHTML = `
 
-    ${
-        item.Image
-        ?
-        `<img src="${item.Image}" alt="${item.Title}">`
-        :
-        ""
-    }
-
-    <div class="portal-card-content">
-
-        <h3>${item.Title || ""}</h3>
-
-        <p>${item.Content || ""}</p>
-
-        <div class="meta">
-
-            ${
-                item.Writer
-                ?
-                `By ${item.Writer}<br>`
-                :
-                ""
-            }
-
-            ${dateText}
-
-        </div>
-
-        <div class="action-buttons">
-
-            ${
-                item.PDF
-                ?
-                `
-                <a href="${item.PDF}" target="_blank">
-                PDF
-                </a>
-                `
-                :
-                ""
-            }
-
-            ${
-                item.Link
-                ?
-                `
-                <a href="${item.Link}" target="_blank">
-                Open
-                </a>
-                `
-                :
-                ""
-            }
-
-        </div>
-
-    </div>
-`;
-
-            <p>${item.Content || ""}</p>
-
             ${
                 item.Image
-                ? `
-                <img
-                    src="${item.Image}"
-                    alt="${item.Title}">
-                `
+                ? `<img src="${item.Image}" alt="${item.Title || ''}">`
                 : ""
             }
 
-            <div class="meta">
+            <div class="portal-card-content">
 
-                ${
-                    item.Writer
-                    ? `By ${item.Writer}<br>`
-                    : ""
-                }
+                <h3>${item.Title || ""}</h3>
 
-                ${dateText}
+                <p>${item.Content || ""}</p>
 
-            </div>
+                <div class="meta">
 
-            <div class="action-buttons">
+                    ${
+                        item.Writer
+                        ? `By ${item.Writer}<br>`
+                        : ""
+                    }
 
-                ${
-                    item.PDF
-                    ? `
-                    <a
-                        href="${item.PDF}"
-                        target="_blank">
-                        PDF
-                    </a>
-                    `
-                    : ""
-                }
+                    ${dateText}
 
-                ${
-                    item.Link
-                    ? `
-                    <a
-                        href="${item.Link}"
-                        target="_blank">
-                        Open
-                    </a>
-                    `
-                    : ""
-                }
+                </div>
+
+                <div class="action-buttons">
+
+                    ${
+                        item.PDF
+                        ? `
+                        <a href="${item.PDF}" target="_blank">
+                            PDF
+                        </a>
+                        `
+                        : ""
+                    }
+
+                    ${
+                        item.Link
+                        ? `
+                        <a href="${item.Link}" target="_blank">
+                            Open
+                        </a>
+                        `
+                        : ""
+                    }
+
+                </div>
 
             </div>
         `;
 
         container.appendChild(card);
-    });
-}
 
-searchInput.addEventListener(
-    "input",
-    renderAll
-);
+    });
+
+}
+if(searchInput){
+
+    searchInput.addEventListener(
+        "input",
+        renderAll
+    );
+
+}
 
 loadPortalData();
 
@@ -278,15 +224,12 @@ document.getElementById("menuBtn");
 const leftSidebar =
 document.getElementById("leftLinks");
 
-menuBtn?.addEventListener("click",()=>{
+if(menuBtn){
 
-    if(leftSidebar.style.display==="block"){
+    menuBtn.addEventListener("click",()=>{
 
-        leftSidebar.style.display="none";
+        leftSidebar.classList.toggle("active");
 
-    }else{
+    });
 
-        leftSidebar.style.display="block";
-    }
-
-});
+}
