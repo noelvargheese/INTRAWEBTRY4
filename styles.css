@@ -1,5 +1,5 @@
 /* ===================================
-   GOVERNMENT INFORMATION PORTAL
+   DIGILOCKER STYLE GOV PORTAL
 =================================== */
 
 *{
@@ -8,95 +8,103 @@
     box-sizing:border-box;
 }
 
-body{
-    font-family:Segoe UI, Arial, sans-serif;
-    background:#f5f7fb;
-    color:#333;
+:root{
+    --primary:#0b4d94;
+    --primary-dark:#083d73;
+    --accent:#ff9800;
+    --bg:#f3f6fb;
+    --card:#ffffff;
+    --text:#1f2937;
+    --muted:#6b7280;
+
+    --shadow:
+    0 4px 20px rgba(0,0,0,.08);
+
+    --radius:18px;
 }
 
-/* HEADER */
+body{
+    font-family:'Segoe UI',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+}
+
+/* ==========================
+HEADER
+========================== */
 
 .top-header{
-    background:#003366;
+
+    width:100%;
+
+    background:
+    linear-gradient(
+    135deg,
+    #003366,
+    #0b4d94
+    );
+
     color:white;
-    padding:20px;
-    box-shadow:0 2px 8px rgba(0,0,0,.15);
+
+    padding:35px 50px;
+
+    box-shadow:
+    0 4px 15px rgba(0,0,0,.15);
 }
 
 .logo-section{
     display:flex;
     align-items:center;
-    gap:15px;
+    gap:20px;
 }
 
 .logo-section img{
-    width:70px;
-    height:70px;
+    width:75px;
+    height:75px;
+    object-fit:contain;
 }
 
 .logo-section h1{
-    font-size:30px;
-    margin-bottom:5px;
+    font-size:3rem;
+    font-weight:700;
+    margin-bottom:8px;
 }
 
 .logo-section p{
+    font-size:1.15rem;
     opacity:.9;
 }
 
-/* NAVIGATION */
+/* ==========================
+NAVBAR
+========================== */
 
 .main-nav{
     background:white;
     display:flex;
     justify-content:center;
-    gap:20px;
+    gap:30px;
     padding:15px;
-    box-shadow:0 2px 6px rgba(0,0,0,.08);
+    box-shadow:
+    0 2px 10px rgba(0,0,0,.05);
+
+    position:sticky;
+    top:0;
+    z-index:100;
 }
 
 .main-nav a{
-    color:#003366;
     text-decoration:none;
+    color:var(--primary);
     font-weight:600;
-    padding:10px 15px;
-    border-radius:6px;
-    transition:.3s;
+    padding:10px 16px;
+    border-radius:10px;
+    transition:.25s;
 }
 
 .main-nav a:hover{
-    background:#003366;
+    background:var(--primary);
     color:white;
-}
-
-/* HERO */
-
-.hero{
-    margin:20px;
-    background:linear-gradient(135deg,#003366,#0055aa);
-    color:white;
-    padding:50px;
-    border-radius:15px;
-    box-shadow:0 4px 15px rgba(0,0,0,.15);
-}
-
-.hero h2{
-    font-size:40px;
-    margin-bottom:15px;
-}
-
-.hero p{
-    font-size:18px;
-}
-
-/* SEARCH */
-
-#searchInput{
-    width:100%;
-    padding:14px;
-    margin-top:20px;
-    border:none;
-    border-radius:8px;
-    font-size:15px;
 }
 
 /* ==========================
@@ -104,35 +112,55 @@ MAIN LAYOUT
 ========================== */
 
 .container{
-display:grid;
-grid-template-columns:280px minmax(0,1fr) 280px;
-gap:25px;
-padding:25px;
-max-width:1800px;
-margin:auto;
-align-items:start;
+
+    max-width:1800px;
+
+    margin:auto;
+
+    padding:25px;
+
+    display:grid;
+
+    grid-template-columns:
+    280px
+    minmax(0,1fr)
+    280px;
+
+    gap:25px;
+
+    align-items:start;
 }
 
 /* ==========================
-SIDEBARS
+LEFT + RIGHT SIDEBAR
 ========================== */
 
 .sidebar{
-background:#ffffff;
-border-radius:18px;
-padding:20px;
-box-shadow:
-0 8px 25px rgba(0,0,0,.08);
-position:sticky;
-top:20px;
+
+    background:white;
+
+    border-radius:22px;
+
+    padding:22px;
+
+    box-shadow:var(--shadow);
+
+    position:sticky;
+
+    top:90px;
 }
 
 .sidebar h2{
-color:#003366;
-margin-bottom:18px;
-font-size:1.8rem;
-border-bottom:3px solid #003366;
-padding-bottom:12px;
+
+    color:var(--primary);
+
+    margin-bottom:18px;
+
+    padding-bottom:12px;
+
+    border-bottom:3px solid var(--primary);
+
+    font-size:2rem;
 }
 
 /* ==========================
@@ -140,184 +168,305 @@ QUICK LINKS
 ========================== */
 
 .links-container{
-display:flex;
-flex-direction:column;
-gap:12px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:14px;
 }
 
 .links-container a{
-display:flex;
-align-items:center;
-gap:12px;
 
-```
-text-decoration:none;
-color:#333;
+    display:flex;
 
-background:#f7f9fc;
+    align-items:center;
 
-padding:14px;
-border-radius:12px;
+    gap:15px;
 
-border:1px solid #e5e7eb;
+    padding:16px;
 
-transition:.25s;
-```
+    border-radius:14px;
 
+    text-decoration:none;
+
+    color:#333;
+
+    background:#fafbfc;
+
+    border:1px solid #e5e7eb;
+
+    transition:.25s;
 }
 
 .links-container a:hover{
-background:#003366;
-color:white;
-transform:translateX(5px);
+
+    transform:translateX(5px);
+
+    background:#f1f6ff;
 }
 
 .links-container img{
-width:42px;
-height:42px;
-border-radius:10px;
-object-fit:cover;
+
+    width:50px;
+
+    height:50px;
+
+    object-fit:cover;
+
+    border-radius:10px;
 }
 
 /* ==========================
-MAIN CONTENT
+CENTER CONTENT
 ========================== */
 
 .main-content{
-display:flex;
-flex-direction:column;
-gap:25px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:25px;
 }
 
 /* ==========================
-SECTION
+WELCOME BANNER
+========================== */
+
+.hero{
+
+    background:
+    linear-gradient(
+    135deg,
+    #003366,
+    #0b4d94
+    );
+
+    color:white;
+
+    border-radius:24px;
+
+    padding:45px;
+
+    box-shadow:var(--shadow);
+}
+
+.hero h2{
+
+    font-size:3rem;
+
+    margin-bottom:20px;
+}
+
+.hero p{
+
+    font-size:1.1rem;
+
+    opacity:.95;
+}
+
+/* ==========================
+SEARCH
+========================== */
+
+#searchInput{
+
+    width:100%;
+
+    margin-top:25px;
+
+    border:none;
+
+    padding:18px 22px;
+
+    border-radius:14px;
+
+    font-size:1rem;
+
+    box-shadow:
+    inset 0 0 0 1px #ddd;
+}
+
+#searchInput:focus{
+
+    outline:none;
+
+    box-shadow:
+    0 0 0 4px rgba(11,77,148,.15);
+}
+
+/* ==========================
+SECTIONS
 ========================== */
 
 .section{
-background:white;
-padding:25px;
-border-radius:18px;
-box-shadow:
-0 8px 25px rgba(0,0,0,.08);
+
+    background:white;
+
+    border-radius:22px;
+
+    padding:25px;
+
+    box-shadow:var(--shadow);
 }
 
 .section h2{
-color:#003366;
-margin-bottom:20px;
-font-size:2rem;
-border-left:5px solid #ff9933;
-padding-left:12px;
+
+    color:var(--primary);
+
+    margin-bottom:20px;
+
+    font-size:2rem;
 }
 
 /* ==========================
-ANNOUNCEMENTS
+CARDS
 ========================== */
 
 .card-grid{
-display:grid;
-gap:20px;
+
+    display:grid;
+
+    gap:20px;
 }
 
 .portal-card{
-display:grid;
-grid-template-columns:220px 1fr;
-gap:20px;
 
-```
-background:white;
+    background:white;
 
-border-radius:16px;
+    border-radius:18px;
 
-overflow:hidden;
+    overflow:hidden;
 
-border:1px solid #e5e7eb;
+    border:1px solid #edf0f5;
 
-transition:.25s;
-```
+    display:grid;
 
+    grid-template-columns:
+    180px
+    1fr;
+
+    transition:.25s;
 }
 
 .portal-card:hover{
-transform:translateY(-3px);
-box-shadow:
-0 12px 30px rgba(0,0,0,.12);
+
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.08);
 }
 
 .portal-card img{
-width:220px;
-height:160px;
-object-fit:cover;
+
+    width:180px;
+
+    height:140px;
+
+    object-fit:cover;
 }
 
-/* CONTENT AREA */
-
 .portal-card-content{
-padding:18px;
+
+    padding:20px;
 }
 
 .portal-card h3{
-color:#003366;
-font-size:1.5rem;
-margin-bottom:10px;
+
+    color:var(--primary);
+
+    margin-bottom:10px;
+
+    font-size:1.4rem;
 }
 
 .portal-card p{
-color:#4b5563;
-line-height:1.7;
+
+    color:var(--muted);
+
+    line-height:1.7;
 }
 
-/* META */
+/* ==========================
+META
+========================== */
 
 .meta{
-margin-top:15px;
-color:#6b7280;
-font-size:.9rem;
+
+    margin-top:15px;
+
+    color:#6b7280;
+
+    font-size:.9rem;
 }
 
-/* ACTION BUTTONS */
+/* ==========================
+BUTTONS
+========================== */
 
 .action-buttons{
-margin-top:15px;
-display:flex;
-gap:10px;
+
+    margin-top:15px;
+
+    display:flex;
+
+    gap:10px;
 }
 
 .action-buttons a{
-background:#003366;
-color:white;
-text-decoration:none;
-padding:10px 15px;
-border-radius:8px;
-font-size:.9rem;
+
+    text-decoration:none;
+
+    background:var(--primary);
+
+    color:white;
+
+    padding:10px 16px;
+
+    border-radius:10px;
+
+    font-weight:600;
 }
 
-.action-buttons a:hover
+.action-buttons a:hover{
+
+    background:var(--primary-dark);
+}
 
 /* ==========================
-CIRCULARS TABLE STYLE
+CIRCULARS
 ========================== */
 
 .circular-item{
-display:flex;
-justify-content:space-between;
-align-items:center;
 
-```
-padding:18px;
+    display:flex;
 
-border-bottom:1px solid #e5e7eb;
-```
+    justify-content:space-between;
 
+    align-items:center;
+
+    padding:18px;
+
+    border-bottom:1px solid #edf0f5;
 }
 
-.circular-item:hover
+.circular-item:hover{
+
+    background:#f8fbff;
+}
 
 .pdf-btn{
-background:#c62828;
-color:white;
-padding:8px 14px;
-border-radius:8px;
-text-decoration:none;
+
+    background:#d32f2f;
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:8px 14px;
+
+    border-radius:8px;
 }
 
 /* ==========================
@@ -325,52 +474,77 @@ EVENTS
 ========================== */
 
 .event-item{
-border-left:4px solid #003366;
-padding:15px 20px;
-margin-bottom:15px;
-background:#f8fafc;
-border-radius:10px;
+
+    background:#f8fbff;
+
+    border-left:4px solid var(--primary);
+
+    border-radius:12px;
+
+    padding:16px 20px;
+
+    margin-bottom:14px;
 }
 
 .event-date{
-color:#003366;
-font-weight:700;
-margin-bottom:8px;
+
+    color:var(--primary);
+
+    font-weight:700;
+
+    margin-bottom:6px;
 }
 
 /* ==========================
-MOBILE
+RESPONSIVE
 ========================== */
 
 @media(max-width:1200px){
 
-```
-.container{
-    grid-template-columns:1fr;
-}
+    .container{
 
-.sidebar{
-    position:static;
-}
-```
+        grid-template-columns:1fr;
+    }
 
+    .sidebar{
+
+        position:static;
+    }
 }
 
 @media(max-width:768px){
 
-```
-.portal-card{
-    grid-template-columns:1fr;
-}
+    .logo-section{
 
-.portal-card img{
-    width:100%;
-    height:220px;
-}
+        flex-direction:column;
 
-.section h2{
-    font-size:1.6rem;
-}
-```
+        text-align:center;
+    }
 
+    .logo-section h1{
+
+        font-size:2rem;
+    }
+
+    .hero{
+
+        padding:30px;
+    }
+
+    .hero h2{
+
+        font-size:2rem;
+    }
+
+    .portal-card{
+
+        grid-template-columns:1fr;
+    }
+
+    .portal-card img{
+
+        width:100%;
+
+        height:220px;
+    }
 }
