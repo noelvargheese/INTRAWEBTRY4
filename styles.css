@@ -18,7 +18,52 @@ body{
 }
 
 /* HEADER */
+.logo-section{
+    width:100%;
+}
 
+.title-block{
+    width:100%;
+}
+
+.title-row{
+    display:grid;
+    grid-template-columns:1fr auto 1fr;
+    align-items:center;
+    width:100%;
+}
+
+.main-title{
+    margin-bottom:12px;
+}
+
+.title-left{
+    text-align:left;
+    font-size:1.6rem;
+    font-weight:700;
+}
+
+.title-center{
+    text-align:center;
+    font-size:2.5rem;
+    font-weight:800;
+    letter-spacing:1px;
+    padding:0 30px;
+}
+
+.title-right{
+    text-align:right;
+    font-size:1.6rem;
+    font-weight:700;
+}
+
+.sub-title .title-left,
+.sub-title .title-center,
+.sub-title .title-right{
+    font-size:1rem;
+    font-weight:400;
+    color:rgba(255,255,255,.9);
+}
 .top-header{
     background:
     linear-gradient(
@@ -327,7 +372,35 @@ body{
     box-shadow:
     0 4px 10px rgba(0,0,0,.08);
 }
+@media(max-width:768px){
 
+.title-row{
+    grid-template-columns:1fr;
+    gap:8px;
+}
+
+.title-left,
+.title-center,
+.title-right{
+    text-align:center;
+}
+
+.title-center{
+    font-size:1.8rem;
+}
+
+.title-left,
+.title-right{
+    font-size:1.2rem;
+}
+
+.sub-title .title-left,
+.sub-title .title-center,
+.sub-title .title-right{
+    font-size:.9rem;
+}
+
+}
 /* CONTENT SECTIONS */
 
 .section{
@@ -639,3 +712,4 @@ body{
         font-size:1.6rem;
     }
 }
+ 
